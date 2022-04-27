@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masai Investors</title>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#form_container {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 200px;
+}
+#form_container #investorData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#investorData input {
+  width: 500px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+#investorData input[type="submit"] {
+  display: inline;
+  width: 512px;
+}
+.container {
+  width: 95%;
+  margin: auto;
+}
+.cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4,23%);
+  gap: 20px;
+}
+.card {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card .img_container img {
+  width: 100%;
+}
+.card :last-child{
+  width: 50%;
+}
+  </style>
+</head>
+<body>
+  
+
+  <div id="navbar">
+    <div>
+      <a href="frontend.html">Front End</a>
+
+    </div>
+    <div>
+      <a href="backend.html">backend End</a>
+    </div>
+  </div>
+
+
+
+  <div id="form_container">
+    <form id="investorData">
+      <input id="investor_image" type="text" placeholder="Investor Image">
+      <input id="investorName" type="text" placeholder="Investor Name">
+      <input id="role" type="text" placeholder="Investor Role">
+      <input id="comp_img" type="text" placeholder="Company logo">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script src="backend.js"></script>
+<!--     
+  <script>
+    
+
+var form = document.querySelector("#investorData");
+
+form.addEventListener("submit",addInvestor);
+
+function addInvestor(){
+event.preventDefault();
+
+var data = {
+  img : form.investor_image.value,
+  name: form.investorName.value,
+  role :form.role.value,
+  companyImg : form.comp_img.value,
+}
+
+var cards = document.querySelector(".cards");
+
+
+var cardEle = document.createElement("div");
+cardEle.setAttribute("class","card");
+cards.append(cardEle);
+var imgDiv = document.createElement('div');
+imgDiv.setAttribute("class","img_container");
+cardEle.append(imgDiv);
+
+var imgEle = document.createElement("img");
+imgEle.setAttribute("src",data.img);
+
+var nameEle = document.createElement("h1");
+nameEle.innerText = data.name;
+
+var roleEle = document.createElement("p");
+roleEle.innerText = data.role;
+
+var comp_imgEle = document.createElement("img");
+comp_imgEle.setAttribute("src",data.companyImg);
+imgDiv.append(imgEle);
+cardEle.append(nameEle,roleEle,comp_imgEle);
+
+
+
+}
+  </script> -->
+</body>
+</html>

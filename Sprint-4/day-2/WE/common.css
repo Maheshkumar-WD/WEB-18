@@ -1,0 +1,29 @@
+*{
+  margin: 0;;
+  padding: 0;
+}
+#navbar{
+  width: 600px;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+#navbar div{
+   display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+#navbar div{
+  background-color: rgb(152, 69, 230);
+  margin: 2px;
+
+  
+}
+#navbar div a{
+  font-size: 24px;
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+}
