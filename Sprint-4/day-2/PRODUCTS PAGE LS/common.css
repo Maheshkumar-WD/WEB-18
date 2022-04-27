@@ -1,0 +1,27 @@
+*{
+  box-sizing: border-box;
+}
+.cards{
+  display: grid;
+  grid-template-columns: repeat(4,23%);
+  gap: 20px;
+  justify-content: center;
+  
+}
+.card{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+
+  
+}
+.imgContainer{
+  width: 100%;
+}
+img{
+  width: 100%;
+}
+.text-container{
+  padding: 10px;
+
+}
