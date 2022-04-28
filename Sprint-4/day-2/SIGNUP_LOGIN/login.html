@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .signUpContainer {
+      padding: 30px 25px;
+      width: 500px;
+      margin: auto;
+      margin-top: 50px;
+      /* background-color: rgb(247, 247, 247); */
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius: 25px;
+    }
+
+    .signUpHeading {
+      text-align: center;
+      color: #555;
+    }
+
+    #signup {
+      width: 80%;
+      margin: auto;
+    }
+
+    .inputContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 20px;
+    }
+
+    .inputContainer label {
+      font-size: 14px;
+      color: #555;
+      font-weight: 600;
+    }
+
+    #userName,
+    #email,
+    #password,
+    #btnSubmit {
+      padding: 10px;
+      font-size: 18px;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+
+    #btnSubmit {
+      margin-top: 30px;
+      color: #555;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #btnSubmit:hover {
+      background-color: rgb(208, 208, 208);
+      color: #222;
+    }
+
+    .redirect_link_container {
+      color: #555;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .redirect_link_text a {
+      text-decoration: none;
+      color: rgb(91, 91, 236);
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="signUpContainer">
+      <h1 class="signUpHeading">Sign In</h1>
+      <form id="signup">
+
+        <div class="inputContainer">
+          <label for="">Email</label>
+          <input type="email" id="email" placeholder="Enter Your Email">
+        </div>
+        <div class="inputContainer">
+          <label for="">Password</label>
+          <input type="password" id="password" placeholder="Enter Your Password">
+        </div>
+        <div class="btnContainer inputContainer">
+          <input type="submit" value="SIGN In" id="btnSubmit">
+        </div>
+
+        <div class="redirect_link_container">
+          <p class="redirect_link_text">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+  <script>
+    let userData = JSON.parse(localStorage.getItem("signUpData")) || null;
+    // console.log(userData);
+
+    var form = document.querySelector('#signup');
+
+
+    form.addEventListener("submit", function () {
+      event.preventDefault();
+      
+      const loginData = {
+        email : form.email.value,
+        pass : form.password.value,
+      }
+
+     var curruser ;
+
+     for(var i = 0;i<userData.length;i++){
+        email = userData[i].email;
+        pass = userData[i].pass;
+       if(email == loginData.email && pass == loginData.pass){
+         curruser = userData[i];
+         break;
+       }
+     }
+
+      if(curruser){
+        alert("user logged in successful");
+      }else {
+        alert("user not found");
+      }
+      
+    })
+
+
+  </script>
+</body>
+
+</html>
